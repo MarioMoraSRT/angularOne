@@ -1,0 +1,32 @@
+<div class="containter">
+    <h1>People list</h1>
+    <div class="row">
+        <div class="col">
+            
+            <label>Person's Title</label>
+            <input type="text" class="form-control" 
+                [(ngModel)]="personTitle"
+                
+                />
+            
+            <h3>{{personTitle}}</h3>
+            <br>
+
+            <button class="btn btn-primary" [disabled]="!addPerson" (click)="onAddPerson()" >Add Person</button>
+            <h2 *ngIf="personCreated">{{addPersonStatus}} with title: {{personTitle}}</h2>
+            <app-person></app-person>
+        </div>
+        <!--
+            testing with a list of people
+            <div class="col">
+                <h2>Name</h2>
+            </div>
+            <div class="col">
+                <h2>Lastname</h2>
+            </div>
+            <div class="col">
+                <h2>Age</h2>
+            </div>
+        -->
+    </div>
+</div>
