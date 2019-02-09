@@ -13,8 +13,11 @@
             <br>
 
             <button class="btn btn-primary" [disabled]="!addPerson" (click)="onAddPerson()" >Add Person</button>
-            <h2 *ngIf="personCreated">{{addPersonStatus}} with title: {{personTitle}}</h2>
+            <h2 *ngIf="personCreated; else notCreatedYet">{{addPersonStatus}} with title: {{personTitle}}</h2>
             <app-person></app-person>
+			<ng-template #notCreatedYet>
+				<h3>The person have not been created!!</h3>
+			</ng-template>
         </div>
         <!--
             testing with a list of people
